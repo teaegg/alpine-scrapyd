@@ -1,6 +1,8 @@
 docker-crawler
 =======
 
+![](http://dockeri.co/image/teaegg/python-crawler)
+
 [Scrapy][1] is an open source and collaborative framework for extracting the
 data you need from websites. In a fast, simple, yet extensible way.
 
@@ -23,8 +25,6 @@ Only 4 latest python packages are installed:
 Please use this image as base for your own project.
 
 ## Run it as background-daemon for scrapyd
-
-![](http://dockeri.co/image/teaegg/python-crawler)
 
 ```
 $ docker run -d --restart always --name crawler -p 6800:6800 teaegg/python-crawler
@@ -56,7 +56,7 @@ class StackOverflowSpider(scrapy.Spider):
         }
 _EOF_
 
-$ docker run -it --rm -v `pwd`:/code -w /code teaegg/python-crawler sh 
+$ docker run -it --rm -v `pwd`:/code -w /code teaegg/python-crawler sh
 >>> scrapy runspider stackoverflow_spider.py -o top-stackoverflow-questions.json
 >>> cat top-stackoverflow-questions.json
 >>> exit
