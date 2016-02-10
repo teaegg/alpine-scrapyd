@@ -1,4 +1,4 @@
-docker-crawler
+python-crawler
 =======
 
 ![](http://dockeri.co/image/teaegg/python-crawler)
