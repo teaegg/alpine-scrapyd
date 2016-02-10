@@ -26,15 +26,18 @@ Please use this image as base for your own project.
 
 ## Run it as background-daemon for scrapyd
 
-```
-$ docker run -d --restart always --name crawler -p 6800:6800 teaegg/python-crawler
-$ firefox http://localhost:6800
+```sh
+docker run -d --restart always --name crawler -p 6800:6800 teaegg/python-crawler
+firefox http://localhost:6800
 ```
 
 ## Run it as interactive-shell for scrapy
 
+```sh
+$ cat > stackoverflow_spider.py
 ```
-$ cat > stackoverflow_spider.py << _EOF_
+
+```python
 import scrapy
 
 class StackOverflowSpider(scrapy.Spider):
@@ -54,12 +57,13 @@ class StackOverflowSpider(scrapy.Spider):
             'tags': response.css('.question .post-tag::text').extract(),
             'link': response.url,
         }
-_EOF_
+```
 
-$ docker run -it --rm -v `pwd`:/code -w /code teaegg/python-crawler sh
->>> scrapy runspider stackoverflow_spider.py -o top-stackoverflow-questions.json
->>> cat top-stackoverflow-questions.json
->>> exit
+```sh
+docker run -it --rm -v `pwd`:/code -w /code teaegg/python-crawler sh
+scrapy runspider stackoverflow_spider.py -o top-stackoverflow-questions.json
+cat top-stackoverflow-questions.json
+exit
 ```
 
 [1]: https://github.com/scrapy/scrapy
