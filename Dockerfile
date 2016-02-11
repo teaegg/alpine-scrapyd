@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.3
 MAINTAINER teaegg.love@gmail.com
 
 ENV RUNTIME_PACKAGES python py-pip libxslt libxml2 git curl
