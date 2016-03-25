@@ -1,7 +1,7 @@
-python-crawler
+alpine-scrapyd
 =======
 
-![](http://dockeri.co/image/teaegg/python-crawler)
+![](http://dockeri.co/image/teaegg/alpine-scrapyd)
 
 [Scrapy][1] is an open source and collaborative framework for extracting the
 data you need from websites. In a fast, simple, yet extensible way.
